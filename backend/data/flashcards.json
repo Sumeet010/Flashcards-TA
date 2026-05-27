@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1779890641338",
+    "question": "What is Node.js?",
+    "answer": "JavaScript runtime",
+    "category": "Backend"
+  },
+  {
+    "id": "1779890641341",
+    "question": "What is HTML",
+    "answer": "HTML stands for Hypertext markup lamguage",
+    "category": "Frontend"
+  }
+]
