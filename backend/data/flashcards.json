@@ -3,12 +3,16 @@
     "id": "1779890641338",
     "question": "What is Node.js?",
     "answer": "JavaScript runtime",
-    "category": "Backend"
+    "category": "backend",
+    "reviewCount": 4,
+    "lastReviewed": "2026-05-28T06:54:18.637Z"
   },
   {
     "id": "1779890641341",
     "question": "What is HTML",
     "answer": "HTML stands for Hypertext markup lamguage",
-    "category": "Frontend"
+    "category": "frontend",
+    "reviewCount": 2,
+    "lastReviewed": "2026-05-28T06:53:29.648Z"
   }
 ]

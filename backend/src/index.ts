@@ -23,6 +23,8 @@ app.post("/flashcard", async (req: Request, res: Response) => {
     question,
     answer,
     category,
+    reviewCount: 0,
+    lastReviewed: null
   };
 
   flashCard.push(newFlashcard);
@@ -40,7 +42,7 @@ app.get("/flashcard/:id", async (req: Request, res: Response) => {
 
   const data = await fs.readFile("./data/flashcards.json", "utf-8");
   const flashcards = JSON.parse(data)
-  console.log(flashcards)
+  // console.log(flashcards)
 
   const singleFlashCard = flashcards.find((flashcard: any)=> id === flashcard.id)
 
@@ -56,10 +58,7 @@ app.get("/flashcard/:id", async (req: Request, res: Response) => {
 app.delete("/flashcard/:id", async (req: Request, res: Response) => {
   const id = req.params.id;
 
-  const data = await fs.readFile(
-    "./data/flashcards.json",
-    "utf-8"
-  );
+  const data = await fs.readFile("./data/flashcards.json","utf-8");
 
   const flashcards = JSON.parse(data);
 
@@ -73,10 +72,7 @@ app.delete("/flashcard/:id", async (req: Request, res: Response) => {
     });
   }
 
-  await fs.writeFile(
-    "./data/flashcards.json",
-    JSON.stringify(filteredFlashcards, null, 2)
-  );
+  await fs.writeFile("./data/flashcards.json",JSON.stringify(filteredFlashcards, null, 2));
 
   return res.json({
     message: "Flashcard deleted successfully"
@@ -128,6 +124,33 @@ app.get("/flashcard/category/:category", async (req: Request, res: Response) => 
   res.json(categoryWiseFlashcards);
 
 })
+
+app.post("/flashcard/:id/review", async (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  const data = await fs.readFile("./data/flashcards.json","utf-8");
+
+  const flashcards = JSON.parse(data);
+
+  const flashcard = flashcards.find((flashcard: any) => flashcard.id === id);
+
+  if (!flashcard) {
+    return res.status(404).json({
+      message: "Flashcard not found"
+    });
+  }
+
+  flashcard.reviewCount += 1;
+
+  flashcard.lastReviewed = new Date().toISOString();
+
+  await fs.writeFile("./data/flashcards.json",JSON.stringify(flashcards, null, 2));
+
+  return res.json({
+    message: "Flashcard reviewed successfully",
+    flashcard
+  });
+});
 
 app.listen(3000, () => {
   console.log("Server Started");
