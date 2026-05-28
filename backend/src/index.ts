@@ -53,7 +53,7 @@ app.get("/flashcard/:id", async (req: Request, res: Response) => {
   return res.json(singleFlashCard);
 })
 
-app.delete("/flashcard/:id", async (req, res) => {
+app.delete("/flashcard/:id", async (req: Request, res: Response) => {
   const id = req.params.id;
 
   const data = await fs.readFile(
@@ -83,7 +83,7 @@ app.delete("/flashcard/:id", async (req, res) => {
   });
 });
 
-app.patch("/flashcard/:id", async (req, res) => {
+app.patch("/flashcard/:id", async (req: Request, res: Response) => {
   const id = req.params.id;
   const { question, answer, category } = req.body;
 
@@ -111,6 +111,23 @@ app.patch("/flashcard/:id", async (req, res) => {
 
 });
 
+app.get("/flashcard/category/:category", async (req: Request, res: Response) => {
+  const category = req.params.category;
+
+  const data = await fs.readFile("./data/flashcards.json", "utf-8");
+
+  const flashcards = JSON.parse(data);
+
+  const categoryWiseFlashcards = flashcards.filter((flashcard: any) => flashcard.category ===  category);
+
+  if(categoryWiseFlashcards.length === 0){
+    return res.status(404).json({
+      message: "Flashcards Not Found"
+    })
+  }
+  res.json(categoryWiseFlashcards);
+
+})
 
 app.listen(3000, () => {
   console.log("Server Started");
