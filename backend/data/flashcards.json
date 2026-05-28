@@ -1,26 +1,34 @@
 [
   {
-    "id": "1779951965664",
-    "question": "What is Node.js?",
-    "answer": "JavaScript runtime",
-    "category": "Backend",
-    "reviewCount": 0,
-    "lastReviewed": null
-  },
-  {
-    "id": "1779952160913",
-    "question": "What is Node.js?",
-    "answer": "JavaScript runtime",
-    "category": "Backend",
-    "reviewCount": 0,
-    "lastReviewed": null
-  },
-  {
     "id": "1779952163222",
     "question": "What is HTML",
     "answer": "HTML stands for Hypertext markup lamguage",
     "category": "Frontend",
     "reviewCount": 2,
     "lastReviewed": "2026-05-28T07:26:11.677Z"
+  },
+  {
+    "id": "1779954582384",
+    "question": "What is Express.js?",
+    "answer": "Web framework for Node.js",
+    "category": "Backend",
+    "reviewCount": 0,
+    "lastReviewed": null
+  },
+  {
+    "id": "1779954613843",
+    "question": "What is a REST API?",
+    "answer": "Architectural style for APIs using HTTP methods",
+    "category": "Backend",
+    "reviewCount": 1,
+    "lastReviewed": "2026-05-28T07:52:01.673Z"
+  },
+  {
+    "id": "1779954633450",
+    "question": "What is the purpose of package.json?",
+    "answer": "Stores project metadata and dependencies",
+    "category": "Tools",
+    "reviewCount": 0,
+    "lastReviewed": null
   }
 ]

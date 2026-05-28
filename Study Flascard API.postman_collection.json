@@ -1,0 +1,195 @@
+{
+  "info": {
+    "_postman_id": "60131b97-0eed-4d64-8a09-1dbdf928f37a",
+    "name": "Study Flascard API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48820098"
+  },
+  "item": [
+    {
+      "name": "get flashcards",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/flashcards",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "post flashcards",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "  {\r\n    \"question\": \"What is the purpose of package.json?\",\r\n    \"answer\": \"Stores project metadata and dependencies\",\r\n    \"category\": \"Tools\"\r\n  }\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/flashcards",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "single flashcard",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/flashcards/1779956444439",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards",
+            "1779956444439"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete flashcard",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/flashcards/1779956444439",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards",
+            "1779956444439"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update flashcard",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"question\" : \"What is HTML\",\r\n    \"answer\" : \"HTML stands for Hypertext markup lamguage\",\r\n    \"category\" : \"Frontend\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/flashcards/1779952163222",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards",
+            "1779952163222"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "review Flashcard",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/flashcards/1779954613843/review",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards",
+            "1779954613843",
+            "review"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category flashcard",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/flashcards/category/Backend",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards",
+            "category",
+            "Backend"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "random flashcard",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"question\": \"What is Node.js?\",\r\n        \"answer\": \"JavaScript runtime\",\r\n        \"category\": \"Backend\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/flashcards/random",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "flashcards",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
